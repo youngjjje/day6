@@ -9,6 +9,7 @@ const NavigationMenu = () => {
         { path: "/profile", label: "Profile" },
         { path: "/about", label: "About" },
         { path: "/contact", label: "Contact" },
+        { path: "/post", label: "Post" }
     ]
 
     return (
