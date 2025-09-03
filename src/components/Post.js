@@ -37,6 +37,11 @@ const Post = ({userObj}) => {
                         <h3>
                             <Link to={`/post/${post.id}` } >{post.title}</Link>
                         </h3>
+                        <small>
+                            {post.createAt
+                                ? new Date(post.createAt).toLocaleString()
+                                : ""}
+                        </small>
                     </li>
                 )
                 )}

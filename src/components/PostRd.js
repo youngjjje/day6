@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../fbase";
-import Post from "./Post";
 import {useNavigate} from "react-router-dom"
+import PostForm from "./PostForm";
 
 
-const PostRd = ({userObj}) => {
+const PostRd = ({onUpdated, userObj}) => {
     const {id} = useParams() // URL 파라미터로 문서 ID 가져오기
     const [post, setPost] = useState(null)
+    const [editing, setEditing]  = useState(false)
     const navigate = useNavigate()
     
+    const handleEditing = () => setEditing(true)
+    const handleCancel = () => setEditing(false)
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -35,9 +38,15 @@ const PostRd = ({userObj}) => {
     }
 
 
-    const handleEdit = async () => {
-        navigate("/post/new")
+    if (editing) {
+        return (
+            <PostForm initialValue={post} userObj={userObj} onSubmit={(updatedPost) => {
+                onUpdated(post.id, updatedPost)
+                setEditing(false)
+            }} onCancel={handleCancel} />
+        )
     }
+
     if (!post) return <p>로딩 중</p>
 
     const isOwner = post.creatorId === userObj?.uid;  
@@ -51,7 +60,7 @@ const PostRd = ({userObj}) => {
             {isOwner &&(
                 <>
                     <button onClick={handleDelete}>Delete</button>
-                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleEditing}>Edit</button>
                 </>
             )}
         </div>
