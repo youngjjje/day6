@@ -2,6 +2,7 @@ import  {HashRouter as Router, Route, Routes} from "react-router-dom"
 import Auth from "routes/Auth"
 import Home from "routes/Home"
 import Navigation from "./Navigation"
+import NavigationMenu from "./NavigationMenu"
 import Profile from "routes/Profile"
 import SungJin from "components/Member/sungjin";
 import YoungK from "components/Member/youngk";

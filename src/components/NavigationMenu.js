@@ -15,7 +15,7 @@ const NavigationMenu = () => {
     return (
         <div>
             <button onClick={() => setIsOpen((prev) => !prev)}>
-                메뉴 열기
+                메뉴
             </button>
             {isOpen && (
                 <div>

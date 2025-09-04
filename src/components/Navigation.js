@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom"
+import NavigationMenu from "./NavigationMenu"
+
 const Navigation = () => {
     return (
         <nav>
@@ -9,6 +11,9 @@ const Navigation = () => {
                 <li>
                     <Link to="/profile">My Profile</Link>
                 </li>
+                <div>
+                    <NavigationMenu >메뉴</NavigationMenu>
+                </div>
             </ul>
         </nav>
     )

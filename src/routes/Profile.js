@@ -6,7 +6,7 @@ const Profile = () => {
 
     const onLogOutClick = () => {
         authService.signOut()
-        navigate.push("/")
+        navigate("/")
     }
 
   return (
