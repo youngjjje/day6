@@ -1,0 +1,102 @@
+/* 전체 화면 중앙 정렬*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+/*네모 박스*/
+.login-box {
+    background: linear-gradient(white, #CEF2EC, #CEF2EC, #43C4B7);
+    width: 350px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 350;
+    text-align: center;
+}
+
+/*상단 제목*/
+.login-title {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 로그인 비밀번호 입력창*/
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 325px;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    border: none;
+    background: white;
+    font-size: 14px;
+}
+
+/*로그인 버튼*/
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 0px solid black;
+    border-radius: 6px;
+    background: #17BFA0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*sign in, create account 토글 */
+.toggle-account {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 0px solid #ccc;
+    border-radius: 6px;
+    background: #17BFA0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.toggle-account:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*구글 로그인 버튼*/
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.google-btn img {
+    width: 18px;
+    height: 18px;
+}
+.google-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 0px rgba(0, 0, 0, 0.2);
+}

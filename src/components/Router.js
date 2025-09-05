@@ -4,10 +4,8 @@ import Home from "routes/Home"
 import Navigation from "./Navigation"
 import NavigationMenu from "./NavigationMenu"
 import Profile from "routes/Profile"
-import SungJin from "components/Member/sungjin";
-import YoungK from "components/Member/youngk";
-import WonPil from "components/Member/wonpil";
-import DoWon from "components/Member/dowon";
+import Member from "./Member"
+import MemberDetail from "./MemberDetail"
 import Post from "components/Post"
 import PostForm from "components/PostForm"
 import PostRd from "components/PostRd"
@@ -22,10 +20,7 @@ const AppRouter= ({isLoggedIn, userObj}) => {
                 {isLoggedIn ? (
                     <>
                         <Route path="/" element={<><Home /><Profile /></>} />
-                        <Route path="/SungJin" element={<SungJin />} />
-                        <Route path="/YoungK" element={<YoungK />} />
-                        <Route path="/WonPil" element={<WonPil />} />
-                        <Route path="/DoWon" element={<DoWon />} />
+                        <Route path="/member/:memberName" element={<MemberDetail />} />
                         <Route path="/post" element={<Post />} />
                         <Route path="/post/new" element={<PostForm userObj={userObj}/>} />
                         <Route path="/post/:id" element={<PostRd userObj={userObj}/>} />

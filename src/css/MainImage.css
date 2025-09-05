@@ -1,0 +1,16 @@
+/*이미지 컨테이너*/
+.main-image-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/*이미지 스타일*/
+.main-image {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+}

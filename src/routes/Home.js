@@ -1,6 +1,8 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationMenu from "components/NavigationMenu"
 import HomeImage from "components/HomeImage"
 import Member from "components/Member"
+import MemberDetail from "components/MemberDetail"
 import Album from "components/Album"
 import { useState } from "react"
 import AlbumModal from "components/AlbumModal"
@@ -32,11 +34,11 @@ const Home = () => {
         <>
             <HomeImage />
 
-            <Member name="SungJin" path="/sungjin"/>
-            <Member name="YoungK" path="/youngk"/>
-            <Member name="WonPil" path="/wonpil"/>
-            <Member name="Dowon" path="/dowon"/>
-
+            <Routes>
+                <Route path="/" element={<Member />} />
+                <Route path="/member/:memberName" element={<MemberDetail />} />
+            </Routes>
+            
             <div>
                 {albums.map((album) => (
                     <div key={album.id} onClick={() => handleAlbumClick(album)} style={{cursor: "pointer"}}>

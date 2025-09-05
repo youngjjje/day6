@@ -1,14 +1,13 @@
 import React from "react"
+import "../css/Album.css"
 
 const Album = ({image, title, description, reverse}) => {
 
     return (
-        <div style={{display: "flex", alignItems: "center", marginBottom: "20px",
-                        flexDirection: reverse ? "row-reverse" : "row"}}>
-            <img src={image} alt={title}
-                style={{width: "150px", height: "150px", objectFit: "cover", marginRight: "20px"}} />
+        <div className={`card-container ${reverse ? "row-reverse" : ""}`}>
+            <img src={image} alt={title} className="card-image"/>
             
-            <div>
+            <div className="card-content">
                 <h3>{title}</h3>
                 <p>{description}</p>
             </div>

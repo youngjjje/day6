@@ -1,8 +1,11 @@
 import {Link} from "react-router-dom"
 import {useState} from "react"
+import "../css/Navigation.css"
 
 const NavigationMenu = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     const menuItems = [
         { path: "/", label: "Home" },
@@ -14,19 +17,19 @@ const NavigationMenu = () => {
 
     return (
         <div>
-            <button onClick={() => setIsOpen((prev) => !prev)}>
-                메뉴
+            <button onClick={toggleMenu} className="menu-btn">
+                Menu
             </button>
-            {isOpen && (
-                <div>
-                    {menuItems.map((item) => (
-                        <Link key={item.path} to={item.path}>
-                            <div>{item.label}</div>
-                        </Link>
-            ))}
-                </div>
-            )}
-            
+
+            {/* 사이드 메뉴는 DOM에 항상 있고, className으로 열고 닫힘만 제어 */}
+            <div className={`side-menu ${menuOpen ? "open" : ""}`} >
+                <button onClick={toggleMenu} className="menu-btn">Menu</button>
+                {menuItems.map((item) => (
+                    <Link className="menu-word" key={item.path} to={item.path} onClick={() => setMenuOpen(false)}>
+                        <div>{item.label}</div>
+                    </Link>
+                 ))}
+            </div>            
         </div>
     )
 }

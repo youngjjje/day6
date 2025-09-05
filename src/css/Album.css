@@ -1,0 +1,45 @@
+/*전체 박스*/
+.card-container {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 20px;
+    background: linear-gradient(#43C4B7, #CEF2EC,#CEF2EC );
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/*reverse 적용*/
+.card-container.row-reverse {
+    flex-direction: row-reverse;
+}
+
+/*이미지*/
+.card-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+/*row-reverse일 때 간격 반대로*/
+.card-container.row-reverse .card-image {
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+/*내용 박스*/
+.card-content {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    flex: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+}
+
+.card-content p {
+    margin: 0;
+}
