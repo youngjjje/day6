@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import {collection, getDocs} from "firebase/firestore"
 import {db} from "../fbase"
+import "../css/Post.css"
 
 
 const Post = ({userObj}) => {
@@ -25,29 +26,40 @@ const Post = ({userObj}) => {
 
 
     return (
-        <div style={{padding: "20px"}}>
-            <h1>게시글 목록</h1>
-            <Link to= "/post/new">
-                <button>글 작성</button>
-            </Link>
+        <div className="board-container">
+
+            <div className="board-box">
+                <h1 className="board-title">게시판</h1>
+                <ul className="post-list">
+                    {posts.map((post) => (
+                        <li key={post.id} className="post-item">
+                            <span className="post-writer">{post.writer}</span>
+                            <span className="post-title">
+                                <Link to={`/post/${post.id}`}>{post.title}</Link>
+                            </span>
+                            <span className="post-date">
+                                {post.createAt ? new Date(post.createAt).toLocaleString() : ""}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <div className="write-btn-wrapper">
+                    <Link to="/post/new" className="write-btn">글 작성</Link>
+                </div>
+            </div>
             
-            <ul style={{marginTop: "20px"}}>
-                {posts.map((post) => (
-                    <li key={post.id} style={{marginBottom: "15px"}}>
-                        <h3>
-                            <Link to={`/post/${post.id}` } >{post.title}</Link>
-                        </h3>
-                        <small>
-                            {post.createAt
-                                ? new Date(post.createAt).toLocaleString()
-                                : ""}
-                        </small>
-                    </li>
-                )
-                )}
-            </ul>
+            <div className="pagination">
+                <button className="arrow">&lt;</button>
+                {[...Array(10)].map((_, i) => (
+                    <button key={i + 1} className="page-btn">
+                        {i + 1}
+                    </button>
+                ))}
+                <button className="arrow">&gt;</button>
+            </div>
         </div>
+        
     )
 }
-// isOwner={posts.createId === userObj.uid}
+
 export default Post

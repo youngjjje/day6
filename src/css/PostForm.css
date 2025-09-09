@@ -1,0 +1,62 @@
+.postform-board-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.postform-board-box {
+    background: linear-gradient(#43C4B7, #CEF2EC, #CEF2EC);
+    border-radius: 8px;
+    padding: 20px;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+.board-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-title {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-content {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.save-btn {
+    background: #43C4B7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cancel-btn {
+    background: #43C4B7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}

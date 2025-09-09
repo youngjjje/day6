@@ -1,0 +1,119 @@
+/*전체 컨테이너*/
+.board-container {
+    display: 800px;
+    min-width: 760px;
+    margin: 100px auto 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/*게시판 제목*/
+.board-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*상단 제목 + 글쓰기 버튼*/
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/*글작성 버튼*/
+.write-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+.write-btn {
+    background: #43C4B7;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*바깥 박스*/
+.board-box {
+    background: linear-gradient(#43C4B7, #CEF2EC, #CEF2EC);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/*안쪽 박스*/
+.post-list {
+    list-style: none;
+    background: white;
+    border-radius: 8px;
+    padding: 20;
+    margin: 0;
+}
+
+/*게시글 항목*/
+.post-item {
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-item:last-child {
+    border-bottom: none;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.post title a:hover {
+    color: #007bff;
+}
+
+.post-writer {
+    color: #555;
+    font-size: 14px;
+}
+.post-date {
+    color: #777;
+    font-size: 13px;
+    text-align: right;
+}
+
+/*페이지네이션*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    width: 100%;
+    gap: 6px;
+}
+
+.page-btn, .arrow {
+    background: none;
+    border: none;
+    color: #43C4B7;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 18px;
+}
+.page-btn:hover, .arrow:hover {
+    background: #43C4B7;
+    color: white;
+}
