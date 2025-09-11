@@ -19,7 +19,7 @@ const AppRouter= ({isLoggedIn, userObj}) => {
             <Routes>
                 {isLoggedIn ? (
                     <>
-                        <Route path="/" element={<><Home /><Profile /></>} />
+                        <Route path="/" element={<><Home /></>} />
                         <Route path="/member/:memberName" element={<MemberDetail />} />
                         <Route path="/post" element={<Post />} />
                         <Route path="/post/new" element={<PostForm userObj={userObj}/>} />

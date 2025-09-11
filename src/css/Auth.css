@@ -9,7 +9,7 @@
 
 /*네모 박스*/
 .login-box {
-    background: linear-gradient(white, #CEF2EC, #CEF2EC, #43C4B7);
+    background: linear-gradient(#43C4B7, #CEF2EC, #CEF2EC, white );
     width: 350px;
     padding: 40px;
     border-radius: 12px;

@@ -3,6 +3,7 @@ import MainImage from "../Image/MainImage.jpg"
 import MainImage2 from "../Image/MainImage2.jpg"
 import MainImage3 from "../Image/MainImage3.jpg"
 import "../css/MainImage.css"
+
 const HomeImage = () => {
     const images = [MainImage, MainImage2, MainImage3]
     const [current, setCurrent] = useState(0)

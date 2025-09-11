@@ -5,9 +5,15 @@ import { db } from "../fbase";
 import Album from "components/Album"
 import AlbumModal from "components/AlbumModal"
 
+import "../css/MemberDetail.css"
 
 import album2 from "Image/album2.jpg"
 import album3 from "Image/album3.jpg"
+
+import SungJin from "Image/sungjin.webp"
+import YounK from "Image/youngk.webp"
+import WonPil from "Image/wonpil.webp"
+import Dowon from "Image/dowon.webp"
 
 const MemberDetail = () => {
     const {memberName } = useParams()
@@ -45,9 +51,6 @@ const MemberDetail = () => {
 
     if(!memberData) return <p>없는 멤버입니다.</p>
 
-
-
-
     const handleAlbumClick = (album) => {
         setSelectedAlbum(album)
     }
@@ -56,25 +59,41 @@ const MemberDetail = () => {
         setSelectedAlbum(null)
     }
 
+    const members = [
+            { mName: "SungJin", image: SungJin,},
+            { mName: "YoungK", image: YounK,},
+            { mName: "WonPil", image: WonPil,},
+            { mName: "Dowon", image: Dowon,}
+        ];
+
+    const currentMember = members.find((m) => m.mName === memberName)
 
     return (
-        <div>
-            <h2>Name: {memberData.name}</h2>
-            <p>Role: {memberData.role}</p>
-            <p>Birth: {memberData.birth}</p>
-            <p>Album: {memberData.album}</p>
-            <p>Song: {memberData.song}</p>
-            
-            <div>
-                {albums.map((album) => (
-                    <div key={album.id} onClick={() => handleAlbumClick(album)} style={{cursor: "pointer"}}>
-                        <Album image={album.image} title={album.title}
-                            description={album.description}  />
+        <div className="member-page">                
+            <div className="member-detail-container">
+                { currentMember && (
+                    <div className="member-banner">
+                        <img src={currentMember.image} alt={currentMember.mName}/>
                     </div>
-                ))}
-                
+                )}
+                <div className="member-info">
+                    <h2>Name: {memberData.name}</h2>
+                    <p>Role: {memberData.role}</p>
+                    <p>Birth: {memberData.birth}</p>
+                    <p>Album: {memberData.album}</p>
+                    <p>Song: {memberData.song}</p>
+                </div>                
             </div>
-            <AlbumModal isOpen={!!selectedAlbum} onClose={handleClose} album={selectedAlbum} />
+            <div className="member-bottom">
+                    {albums.map((album) => (
+                        <div key={album.id} onClick={() => handleAlbumClick(album)} style={{cursor: "pointer"}}>
+                            <Album image={album.image} title={album.title}
+                                description={album.description}  />
+                        </div>
+                    ))}                
+            </div>
+            
+                <AlbumModal isOpen={!!selectedAlbum} onClose={handleClose} album={selectedAlbum} />
         </div>
 
         

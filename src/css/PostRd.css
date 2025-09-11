@@ -1,0 +1,71 @@
+.read-board-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.read-board-box {
+    background: linear-gradient(#43C4B7, #CEF2EC, #CEF2EC);
+    border-radius: 8px;
+    padding: 15px;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+.post-detail {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin: 2px 0;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/*구분선*/
+.divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0 0 20px  0;
+    padding: 0;
+}
+
+/*본문*/
+.post-content {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/*버튼 영역*/
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.post-actions button {
+    background: #43C4B7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}

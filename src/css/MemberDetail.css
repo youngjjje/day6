@@ -1,0 +1,36 @@
+
+/*전체 페이지*/
+.member-page {
+    display: fles;
+    flex-direction: column;
+}
+
+.member-detail-container {
+    background: linear-gradient(#43C4B7, #CEF2EC,#CEF2EC, white );
+    padding: 40px 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.member-banner {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.member-banner img {
+    width: 100%;
+    max-width: 800px;
+    height: 250;
+    object-fit: cover; /* 비율 유지하면서 꽉 채우기 */
+    border-radius: 8px;
+}
+
+.member-info {
+    max-width: 800px;
+    text-align: center;
+    white-space: nowrap;
+}

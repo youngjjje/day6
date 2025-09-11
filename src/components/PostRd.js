@@ -4,7 +4,7 @@ import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../fbase";
 import {useNavigate} from "react-router-dom"
 import PostForm from "./PostForm";
-
+import "../css/PostRd.css"
 
 const PostRd = ({onUpdated, userObj}) => {
     const {id} = useParams() // URL 파라미터로 문서 ID 가져오기
@@ -53,16 +53,27 @@ const PostRd = ({onUpdated, userObj}) => {
 
 
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
-            <small>작성일: {new Date(post.createdAt).toLocaleString()}</small>
-            {isOwner &&(
-                <>
-                    <button onClick={handleDelete}>Delete</button>
-                    <button onClick={handleEditing}>Edit</button>
-                </>
-            )}
+        <div className="read-board-container">
+            <div className="read-board-box">
+                <div className="post-detail">
+                    <div className="post-header">
+                        <h1 className="post title">{post.title}</h1>
+                        <span className="post-date">
+                            {new Date(post.createAt).toLocaleDateString()}
+                        </span>
+                    </div>
+                    <hr className="divider" />
+                    <div className="post-content">
+                        <p>{post.content}</p>
+                    </div>                    
+                </div>
+                {isOwner && (
+                        <div className="post-actions">
+                            <button className="edit-btn" onClick={handleEditing}>수정</button>
+                            <button className="delete-btn" onClick={handleDelete}>삭제</button>
+                        </div>
+                    )}
+            </div>            
         </div>
     )
 }
